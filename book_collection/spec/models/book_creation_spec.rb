@@ -6,7 +6,7 @@ RSpec.describe 'Creating a book', type: :feature do
     fill_in 'Title', with: 'New Book Title'
     fill_in 'Author', with: 'Author Name'
     fill_in 'Price', with: '19.99'
-    select '2024', from: 'book_published_date_1i' # This assumes your date select is broken into three parts
+    select '2024', from: 'book_published_date_1i' 
     select 'January', from: 'book_published_date_2i'
     select '30', from: 'book_published_date_3i'
     click_on 'Create Book'
@@ -46,7 +46,6 @@ RSpec.describe 'Creating a book with new attributes', type: :feature do
     fill_in 'Title', with: 'New Book Title'
     fill_in 'Author', with: 'Author Name'
     fill_in 'Price', with: '19.99'
-    # Intentionally not selecting a published date
     click_on 'Create Book'
     expect(page).to have_content("Published date can't be blank")
   end
